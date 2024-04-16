@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
     res.send('hello world');
 });
 
-app.use('/api', require('./src/route'));
+app.use('/', require('./src/route'));
 
 app.listen(PORT, () => {
 console.log(`Server Running on port: ${PORT}`);
