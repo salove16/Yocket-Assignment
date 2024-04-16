@@ -1,0 +1,69 @@
+{
+    "cities": [
+      {
+        "name": "Yapkashnagar",
+        "distance": 60,
+        "image": "https://i.ibb.co/Ws23xF7/image.jpg",
+        "description": "Yapkashnagar: the Enigmatic Metropolis. A bustling city filled with secrets and mysteries around every corner."
+      },
+      {
+        "name": "Lihaspur",
+        "distance": 50,
+        "image": "https://i.ibb.co/XDHzQhn/1.jpg",
+        "description": "Lihaspur: the Misty Labyrinth. Ancient temples shrouded in fog, whispers of forgotten tech."
+      },
+      {
+        "name": "Narmis City",
+        "distance": 40,
+        "image": "https://i.ibb.co/Gsj3dhs/2.jpg",
+        "description": "Narmis City, the Steel Jungle. Towering skyscrapers and hidden underground networks."
+      },
+      {
+        "name": "Shekharvati",
+        "distance": 30,
+        "image": "https://i.ibb.co/g9MBhk5/3.jpg",
+        "description": "Shekharvati, the Sun-Kissed Valley. Rolling hills and forgotten mining tunnels."
+      },
+      {
+        "name": "Nuravgram",
+        "distance": 20,
+        "image": "https://i.ibb.co/1GVGWrf/4.jpg",
+        "description": "Nuravgram, the Quirky Village. Talking robots and malfunctioning AI guardians."
+      }
+    ],
+    "vehicles": [
+      {
+        "kind": "EV Bike",
+        "range": 60,
+        "count": 2,
+        "image": "https://drive.google.com/file/d/1fnn09HJd3ZXGo6HOF0ydpvNLNKpNf72X/view?usp=drive_link"
+      },
+      {
+        "kind": "EV Car",
+        "range": 100,
+        "count": 1,
+        "image": "https://drive.google.com/file/d/1V_dIFr7C3FjF15oDGMw9B3RPOUpfG-NJ/view?usp=drive_link"
+      },
+      {
+        "kind": "EV SUV",
+        "range": 120,
+        "count": 1,
+        "image": "https://drive.google.com/file/d/1mc-oOB7C-Bkwj5bDpSYRi28b2GQhEOPH/view?usp=drive_link"
+      }
+    ],
+    "cops": [
+      {
+        "name": "Cop 1",
+        "image": "https://i.ibb.co/Nr9sNr8/9.jpg"
+      },
+      {
+        "name": "Cop 2",
+        "image": "https://i.ibb.co/9vD82G9/10.jpg"
+      },
+      {
+        "name": "Cop 3",
+        "image": "https://i.ibb.co/80jqJtm/11.jpg"
+      }
+    ]
+  }
+  
