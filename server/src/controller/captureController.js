@@ -6,6 +6,7 @@ const fugitiveLocation = data.cities[Math.floor(Math.random() * data.cities.leng
 exports.capture = async (req, res) => {
     try {
       const { copCity, copVehicle } = req.body;
+      
   
       const copRange = data.vehicles.find(
         (vehicle) => vehicle.kind === copVehicle
@@ -15,10 +16,13 @@ exports.capture = async (req, res) => {
       const distanceToFugitive = Math.abs(
         fugitiveLocation.distance - copLocation.distance
       );
+
+      
       const successfulCapture = distanceToFugitive <= copRange;
-  
+      
       if (successfulCapture) {
-        const capturingCop = cops[Math.floor(Math.random() * cops.length)];
+ 
+        const capturingCop = data.cops[Math.floor(Math.random() * data.cops.length)];
         res.status(200).json({ success: true, capturingCop });
       } else {
         res.status(200).json({ success: false });
