@@ -2,6 +2,34 @@
 
 This is a fun and engaging full stack web  application where you play as a cop trying to capture a fugitive!
 
+## Getting Started
+
+To get started with the project, follow these steps:
+
+### Cloning the Repository
+
+```bash
+git clone https://github.com/your-username/project-name.git
+
+### Installation Dependencies
+
+1.Client
+
+cd client
+npm install
+npm run dev
+
+
+2.Server
+
+cd server
+npm install
+npm run dev
+
+
+
+
+
 ## How to Play
 
 The game involves strategic decision-making and a bit of luck. Here's how it works:
