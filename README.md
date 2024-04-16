@@ -11,24 +11,24 @@ To get started with the project, follow these steps:
 ```bash
 git clone https://github.com/your-username/project-name.git
 
+```
+
 ### Installation Dependencies
 
 1.Client
-
+```bash
 cd client
 npm install
 npm run dev
+```
 
 
 2.Server
-
+```bash
 cd server
 npm install
 npm run dev
-
-
-
-
+```
 
 ## How to Play
 
