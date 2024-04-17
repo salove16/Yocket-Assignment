@@ -15,17 +15,23 @@ function App() {
   const [cops, setCops] = useState([]);
   const [vehicles, setVehicles] = useState([]);
   const [selectedCop1, setSelectedCop1] = useState({
+    cop:"Cop 1",
     selectedCity: "",
     selectedVehicle: "",
   });
   const [selectedCop2, setSelectedCop2] = useState({
+    cop:"cop 2",
     selectedCity: "",
     selectedVehicle: "",
   });
   const [selectedCop3, setSelectedCop3] = useState({
+    cop:"cop 3",
     selectedCity: "",
     selectedVehicle: "",
   });
+
+  const [allSelectedCops, setAllSelectedCops] = useState([]);
+
   const [captureResult, setCaptureResult] = useState(null);
   const [availableVehicles, setAvailableVehicles] = useState([]);
   const [availableCities, setAvailableCities] = useState([]);
@@ -69,20 +75,20 @@ function App() {
     const selectedCops = [selectedCop1, selectedCop2, selectedCop3];
     const captureResults = [];
 
-    for (const selectedCop of selectedCops) {
+
+    // setAllSelectedCops(selectedCops);
+// console.log(JSON.stringify(selectedCops))
+    // for (const selectedCop of selectedCops) {
       const response = await fetch(`${link}/capture`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          copCity: selectedCop.selectedCity,
-          copVehicle: selectedCop.selectedVehicle,
-        }),
+        body: JSON.stringify(selectedCops),
       });
       const data = await response.json();
       captureResults.push(data);
-    }
+    // }
 
     const successfulCapture = captureResults.find((result) => result.success);
 
@@ -103,9 +109,20 @@ function App() {
     setAvailableVehicles(updatedVehicles);
 
     // Update selected vehicle for each cop
-    setSelectedCop1({ ...selectedCop1, selectedVehicle: selectedVehicle });
-    setSelectedCop2({ ...selectedCop2, selectedVehicle: selectedVehicle });
-    setSelectedCop3({ ...selectedCop3, selectedVehicle: selectedVehicle });
+    // setSelectedCop1({ ...selectedCop1, selectedVehicle: selectedVehicle });
+    // setSelectedCop2({ ...selectedCop2, selectedVehicle: selectedVehicle });
+    // setSelectedCop3({ ...selectedCop3, selectedVehicle: selectedVehicle });
+
+
+    if(selectedCop1.selectedVehicle===""){
+      setSelectedCop1({ ...selectedCop1, selectedVehicle: selectedVehicle });
+    }else if(selectedCop2.selectedVehicle===""){
+      setSelectedCop2({ ...selectedCop2, selectedVehicle: selectedVehicle });
+    }else if(selectedCop3.selectedVehicle===""){
+      setSelectedCop3({ ...selectedCop3, selectedVehicle: selectedVehicle });
+    }else{
+      return
+    }
   };
  
 
@@ -126,23 +143,23 @@ setAvailableCities(
   
   
     // Update selected city for each cop
-    setSelectedCop1({ ...selectedCop1, selectedCity: selectedCity });
-    setSelectedCop2({ ...selectedCop2, selectedCity: selectedCity });
-    setSelectedCop3({ ...selectedCop3, selectedCity: selectedCity });
-    // if(selectedCop1.selectedCity===""){
-    //   setSelectedCop1({ ...selectedCop1, selectedCity: selectedCity });
-    // }else if(selectedCop2.selectedCity===""){
-    //   setSelectedCop2({ ...selectedCop2, selectedCity: selectedCity });
-    // }else if(selectedCop3.selectedCity===""){
-    //   setSelectedCop3({ ...selectedCop3, selectedCity: selectedCity });
-    // }else{
-    //   return
-    // }
-    // console.log(selectedCop1.selectedCity,selectedCop2.selectedCity,selectedCop3.selectedCity,"after==========>")
+    // setSelectedCop1({ ...selectedCop1, selectedCity: selectedCity });
+    // setSelectedCop2({ ...selectedCop2, selectedCity: selectedCity });
+    // setSelectedCop3({ ...selectedCop3, selectedCity: selectedCity });
+    if(selectedCop1.selectedCity===""){
+      setSelectedCop1({ ...selectedCop1, selectedCity: selectedCity });
+    }else if(selectedCop2.selectedCity===""){
+      setSelectedCop2({ ...selectedCop2, selectedCity: selectedCity });
+    }else if(selectedCop3.selectedCity===""){
+      setSelectedCop3({ ...selectedCop3, selectedCity: selectedCity });
+    }else{
+      return
+    }
+   
     
   };
   
-
+  console.log(selectedCop1,selectedCop2,selectedCop3,"after==========>")
   return (
     <div className="App">
       <a href="/" className="header-link">
