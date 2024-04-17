@@ -6,7 +6,7 @@ import CitySelection from "./components/CitySelection"
 import ResultPage from './components/ResultPage'
 import VehicleSelection from './components/VehicleSelection'
 
-const link="https://pink-glorious-wildebeest.cyclic.app/";
+const link="https://yocket-assignment-gw7x.onrender.com";
 function App() {
   
 
