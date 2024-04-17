@@ -76,9 +76,7 @@ function App() {
     const captureResults = [];
 
 
-    // setAllSelectedCops(selectedCops);
-// console.log(JSON.stringify(selectedCops))
-    // for (const selectedCop of selectedCops) {
+   
       const response = await fetch(`${link}/capture`, {
         method: "POST",
         headers: {
@@ -129,11 +127,7 @@ function App() {
   const handleCitySelection = (selectedCity) => {
     
     
-    // let updatedCities=availableCities.map(city =>
-    //   city.name == selectedCity ? { ...city, selected: true } : city
-    // )
-    
-// console.log(selectedCop1.selectedCity,selectedCop2.selectedCity,selectedCop3.selectedCity,"==========>")
+  
 
 setAvailableCities(
   availableCities.map(city =>
@@ -158,8 +152,7 @@ setAvailableCities(
    
     
   };
-  
-  console.log(selectedCop1,selectedCop2,selectedCop3,"after==========>")
+
   return (
     <div className="App">
       <a href="/" className="header-link">

@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 
 const ResultPage = ({ result }) => {
-  // console.log(result,"==================>result")
+  console.log(result.result,"==================>result")
   return (
     <div className="result-page">
       <h2 className="center-text">Result</h2>
