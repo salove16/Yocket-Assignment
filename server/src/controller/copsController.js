@@ -1,5 +1,5 @@
 const data = require("../db.json")
-// console.log(data.cops)
+
 
   exports.getCops = async (req, res) => {
     try {

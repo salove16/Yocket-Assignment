@@ -20,17 +20,17 @@ function App() {
     selectedVehicle: "",
   });
   const [selectedCop2, setSelectedCop2] = useState({
-    cop:"cop 2",
+    cop:"Cop 2",
     selectedCity: "",
     selectedVehicle: "",
   });
   const [selectedCop3, setSelectedCop3] = useState({
-    cop:"cop 3",
+    cop:"Cop 3",
     selectedCity: "",
     selectedVehicle: "",
   });
 
-  const [allSelectedCops, setAllSelectedCops] = useState([]);
+ 
 
   const [captureResult, setCaptureResult] = useState(null);
   const [availableVehicles, setAvailableVehicles] = useState([]);
@@ -75,7 +75,7 @@ function App() {
     const selectedCops = [selectedCop1, selectedCop2, selectedCop3];
     const captureResults = [];
 
-// console.log(selectedCops,"selectedCops")
+
    
       const response = await fetch(`${link}/capture`, {
         method: "POST",
@@ -85,18 +85,11 @@ function App() {
         body: JSON.stringify(selectedCops),
       });
       const data = await response.json();
-      // captureResults.push(data);
-    // }
-// console.log(data)
-    // const successfulCapture = captureResults.find((result) => result.success);
-console.log(data, data.success)
-    if (data.success==true) {
-      setCaptureResult(data.result);
-    } else {
-      setCaptureResult({ success: false });
-    }
+    
+      setCaptureResult(data);
+    
   };
-  console.log(captureResult,"CaptureResult")
+
 
   const handleVehicleSelection = (selectedVehicle) => {
     const updatedVehicles = availableVehicles.map((vehicle) => {
