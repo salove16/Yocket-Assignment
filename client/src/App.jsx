@@ -6,8 +6,8 @@ import CitySelection from "./components/CitySelection"
 import ResultPage from './components/ResultPage'
 import VehicleSelection from './components/VehicleSelection'
 
-// const link="https://pink-glorious-wildebeest.cyclic.app/";
-const link="https://yocket-assignment-gw7x.onrender.com"
+const link="http://localhost:8080";
+// const link="https://yocket-assignment-gw7x.onrender.com"
 function App() {
   
 
@@ -75,7 +75,7 @@ function App() {
     const selectedCops = [selectedCop1, selectedCop2, selectedCop3];
     const captureResults = [];
 
-
+// console.log(selectedCops,"selectedCops")
    
       const response = await fetch(`${link}/capture`, {
         method: "POST",
@@ -85,17 +85,18 @@ function App() {
         body: JSON.stringify(selectedCops),
       });
       const data = await response.json();
-      captureResults.push(data);
+      // captureResults.push(data);
     // }
-
-    const successfulCapture = captureResults.find((result) => result.success);
-
-    if (successfulCapture) {
-      setCaptureResult(successfulCapture);
+// console.log(data)
+    // const successfulCapture = captureResults.find((result) => result.success);
+console.log(data, data.success)
+    if (data.success==true) {
+      setCaptureResult(data.result);
     } else {
       setCaptureResult({ success: false });
     }
   };
+  console.log(captureResult,"CaptureResult")
 
   const handleVehicleSelection = (selectedVehicle) => {
     const updatedVehicles = availableVehicles.map((vehicle) => {
