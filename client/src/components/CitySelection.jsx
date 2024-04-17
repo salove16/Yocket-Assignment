@@ -19,7 +19,7 @@ const CitySelection = ({ cities, handleCitySelection }) => {
             <div className="city-info">
               <h3>{city.name}</h3>
               <img src={city.image} alt={city.name} className="city-image" />
-              <p>{city.description}</p>
+              <p className="city-description">{city.description}</p>
               <p>Distance: {city.distance} km</p>
             </div>
             {/* <button

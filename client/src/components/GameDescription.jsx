@@ -23,7 +23,7 @@ const GameDescription = ({handleStart}) => {
         </div>
     
       </div>
-      <h2 style={{ textAlign: "center", color: "black" }}> Let The Game Begin...</h2>
+      {/* <h2 style={{ textAlign: "center", color: "black" }}> Let The Game Begin...</h2> */}
       <button className='description-start-button' onClick={() =>handleStart(false)}>start</button>
     </div>
   );

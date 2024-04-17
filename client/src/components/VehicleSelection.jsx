@@ -12,13 +12,15 @@ const VehicleSelection = ({ vehicles, handleVehicleSelection }) => {
     <div>
     <h2 style={{ textAlign: "center", marginTop: "20px" }}>Select Vehicle</h2>
     <div className="select-container">
-      {vehicles.map((city) => (
-        <div key={city.kind} className="city" onClick={() => handleVehicleSelection(city.kind)} style={ {
-            cursor: city.count === 0 ? 'not-allowed' : 'pointer', 
-            opacity: city.count === 0 ? 0.5 : 1  }}>
+      {vehicles.map((vehicle) => (
+        <div key={vehicle.kind} className="city" onClick={() => handleVehicleSelection(vehicle.kind)} style={ {
+            cursor: vehicle.count === 0 ? 'not-allowed' : 'pointer', 
+            opacity: vehicle.count === 0 ? 0.5 : 1  }}>
           <div className="city-info">
-            <h3>{city.kind}</h3>
-            <img src={city.image} alt={city.kind} className="city-image" />
+            <h3>{vehicle.kind}</h3>
+            <img src={vehicle.image} alt={vehicle.kind} className="city-image" />
+            <p>Range: {vehicle.range} km</p>
+            <p>Count: {vehicle.count}</p>
           
           </div>
           

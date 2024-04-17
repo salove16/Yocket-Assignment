@@ -6,7 +6,8 @@ import CitySelection from "./components/CitySelection"
 import ResultPage from './components/ResultPage'
 import VehicleSelection from './components/VehicleSelection'
 
-const link="https://pink-glorious-wildebeest.cyclic.app/";
+// const link="https://pink-glorious-wildebeest.cyclic.app/";
+const link="https://yocket-assignment-gw7x.onrender.com"
 function App() {
   
 
@@ -109,27 +110,35 @@ function App() {
  
 
   const handleCitySelection = (selectedCity) => {
-    // const updatedCities = availableCities.filter((city) => city.name !== selectedCity);
-    // (prevCities =>
-    //   prevCities.map(city =>
-    //     city.name === cityName ? { ...city, selected: true } : city
-    //   )
-    // );
     
-    let updatedCities=availableCities.map(city =>
-      city.name == selectedCity ? { ...city, selected: true } : city
-    )
     
-    setAvailableCities(
-      availableCities.map(city =>
-        city.name === selectedCity ? { ...city, selected: true } : city
-      ));
+    // let updatedCities=availableCities.map(city =>
+    //   city.name == selectedCity ? { ...city, selected: true } : city
+    // )
+    
+// console.log(selectedCop1.selectedCity,selectedCop2.selectedCity,selectedCop3.selectedCity,"==========>")
+
+setAvailableCities(
+  availableCities.map(city =>
+    city.name === selectedCity ? { ...city, selected: true } : city
+  ));
+    
   
   
     // Update selected city for each cop
     setSelectedCop1({ ...selectedCop1, selectedCity: selectedCity });
     setSelectedCop2({ ...selectedCop2, selectedCity: selectedCity });
     setSelectedCop3({ ...selectedCop3, selectedCity: selectedCity });
+    // if(selectedCop1.selectedCity===""){
+    //   setSelectedCop1({ ...selectedCop1, selectedCity: selectedCity });
+    // }else if(selectedCop2.selectedCity===""){
+    //   setSelectedCop2({ ...selectedCop2, selectedCity: selectedCity });
+    // }else if(selectedCop3.selectedCity===""){
+    //   setSelectedCop3({ ...selectedCop3, selectedCity: selectedCity });
+    // }else{
+    //   return
+    // }
+    // console.log(selectedCop1.selectedCity,selectedCop2.selectedCity,selectedCop3.selectedCity,"after==========>")
     
   };
   
@@ -146,10 +155,10 @@ function App() {
         <GameDescription handleStart={setStartButton}/>
         </>):(
         <>
-          <h2 style={{ textAlign: "center", marginTop: "50px", color: "black", backgroundColor:"#ccc", padding:"20px"}}>
-            Cop 1
+          <h2 style={{ textAlign: "center", marginTop: "50px", color: "black", padding:"20px"}}>
+          {cops[0]?.name}
           </h2>
-          <p>{cops[0]?.name}</p>
+          {/* <p>{cops[0]?.name}</p> */}
           <div className="image-container">
             <img src={cops[0]?.image} alt={cops[0]?.name} className="cop-image" />
           </div>
@@ -157,6 +166,7 @@ function App() {
             <CitySelection
               cities={availableCities}
               handleCitySelection={handleCitySelection}
+              // handleCitySelection={selectedCop1.selectedCity === "" ? handleCitySelection : undefined}
               
             />
           </div>
@@ -167,10 +177,10 @@ function App() {
             />
           </div>
 
-          <h2 style={{ textAlign: "center", marginTop: "70px", color: "Black" ,backgroundColor:"#ccc", padding:"20px"}}>
-            Cop 2
+          <h2 style={{ textAlign: "center", marginTop: "70px", color: "Black" , padding:"20px"}}>
+          {cops[1]?.name}
           </h2>
-          <p>{cops[1]?.name}</p>
+          {/* <p>{cops[1]?.name}</p> */}
           <div className="image-container">
             <img src={cops[1]?.image} alt={cops[1]?.name} className="cop-image" />
           </div>
@@ -178,6 +188,7 @@ function App() {
             <CitySelection
               cities={availableCities}
               handleCitySelection={handleCitySelection}
+              // handleCitySelection={selectedCop2.selectedCity === "" ? handleCitySelection : undefined}
               
             />
           </div>
@@ -188,10 +199,10 @@ function App() {
             />
           </div>
 
-          <h2 style={{ textAlign: "center", marginTop: "70px", color: "Black" ,backgroundColor:"#ccc", padding:"20px"}}>
-            Cop 3
+          <h2 style={{ textAlign: "center", marginTop: "70px", color: "Black" , padding:"20px"}}>
+          {cops[2]?.name}
           </h2>
-          <p>{cops[2]?.name}</p>
+          {/* <p>{cops[2]?.name}</p> */}
           <div className="image-container">
             <img src={cops[2]?.image} alt={cops[2]?.name} className="cop-image" />
           </div>
@@ -199,6 +210,7 @@ function App() {
             <CitySelection
               cities={availableCities}
               handleCitySelection={handleCitySelection}
+              // handleCitySelection={selectedCop3.selectedCity === "" ? handleCitySelection : undefined}
               
             />
           </div>
