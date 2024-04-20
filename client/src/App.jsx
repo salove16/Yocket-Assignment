@@ -7,7 +7,9 @@ import ResultPage from './components/ResultPage'
 import VehicleSelection from './components/VehicleSelection'
 
 // const link="http://localhost:8080";
-const link="https://yocket-assignment-gw7x.onrender.com"
+// const link="https://yocket-assignment-gw7x.onrender.com"
+const link="https://yocket-assignment-server.vercel.app";
+
 function App() {
   
 
